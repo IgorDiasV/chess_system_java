@@ -14,4 +14,17 @@ public class Board {
     public int getRows(){
         return rows;
     }
+    public int getColumns(){
+        return this.columns;
+    }
+
+    public Piece piece(int row, int column){
+        return this.pieces[row][column];
+    }
+
+    public Piece piece(Position position){
+        int row = position.getRow();
+        int column = position.getColumn();
+        return this.pieces[row][column];
+    }
 }
