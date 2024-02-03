@@ -1,12 +1,16 @@
 package chess;
 
 import boardgame.Board;
+import boardgame.Position;
+import chess.pieces.King;
+import chess.pieces.Rook;
 public class ChessMatch{
 
     private Board board;
 
     public ChessMatch(){
         this.board = new Board(8, 8);
+        this.initialSetup();
     }
 
     public ChessPiece[][] getChessPieces(){
@@ -19,6 +23,25 @@ public class ChessMatch{
             }
         }
         return pieces;
+    }
+
+    public void initialSetup(){
+        Rook rookwhite1 = new Rook(this.board, Color.WHITE);
+        Rook rookwhite2 = new Rook(this.board, Color.WHITE);
+        Rook rookblack1 = new Rook(this.board, Color.BLACK);
+        Rook rookblack2 = new Rook(this.board, Color.BLACK);
+
+        this.board.PlacePiece(rookwhite1, new Position(7, 0));
+        this.board.PlacePiece(rookwhite2, new Position(7, 7));
+        this.board.PlacePiece(rookblack1, new Position(0, 0));
+        this.board.PlacePiece(rookblack2, new Position(0, 7));
+
+        King kingwhite = new King(this.board, Color.WHITE);
+        King kingblack = new King(this.board, Color.BLACK);
+
+        this.board.PlacePiece(kingwhite, new Position(7, 4));
+        this.board.PlacePiece(kingblack, new Position(0, 4));
+
     }
 
 }
