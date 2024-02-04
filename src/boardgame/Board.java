@@ -6,6 +6,9 @@ public class Board {
     private Piece[][] pieces;
     
     public Board(int rows, int columns){
+        if(rows < 1 || columns < 1){
+            throw new BoardException("Error creating board:  Rows and Columns must be greater than zero.");
+        }
         this.rows = rows;
         this.columns = columns;
         this.pieces = new Piece[rows][columns];
@@ -19,10 +22,16 @@ public class Board {
     }
 
     public Piece piece(int row, int column){
+        if(!positionExists(row, column)){
+            throw new BoardException("Position not on the board");
+        }
         return this.pieces[row][column];
     }
 
     public Piece piece(Position position){
+        if(!positionExists(position)){
+            throw new BoardException("Position not on the board");
+        }
         int row = position.getRow();
         int column = position.getColumn();
         return this.pieces[row][column];
