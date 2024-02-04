@@ -31,16 +31,16 @@ public class ChessMatch{
         Rook rookblack1 = new Rook(this.board, Color.BLACK);
         Rook rookblack2 = new Rook(this.board, Color.BLACK);
 
-        this.board.PlacePiece(rookwhite1, new Position(7, 0));
-        this.board.PlacePiece(rookwhite2, new Position(7, 7));
-        this.board.PlacePiece(rookblack1, new Position(0, 0));
-        this.board.PlacePiece(rookblack2, new Position(0, 7));
+        this.board.placePiece(rookwhite1, new Position(7, 0));
+        this.board.placePiece(rookwhite2, new Position(7, 7));
+        this.board.placePiece(rookblack1, new Position(0, 0));
+        this.board.placePiece(rookblack2, new Position(0, 7));
 
         King kingwhite = new King(this.board, Color.WHITE);
         King kingblack = new King(this.board, Color.BLACK);
 
-        this.board.PlacePiece(kingwhite, new Position(7, 4));
-        this.board.PlacePiece(kingblack, new Position(0, 4));
+        this.board.placePiece(kingwhite, new Position(7, 4));
+        this.board.placePiece(kingblack, new Position(0, 4));
 
     }
 
