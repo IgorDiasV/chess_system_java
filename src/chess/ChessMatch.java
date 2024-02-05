@@ -25,22 +25,19 @@ public class ChessMatch{
         return pieces;
     }
 
+    public void placeNewPiece(char column, int row, ChessPiece piece){
+        Position pos = new ChessPossition(column, row).toPosition();
+        this.board.placePiece(piece, pos);
+
+    }
     public void initialSetup(){
-        Rook rookwhite1 = new Rook(this.board, Color.WHITE);
-        Rook rookwhite2 = new Rook(this.board, Color.WHITE);
-        Rook rookblack1 = new Rook(this.board, Color.BLACK);
-        Rook rookblack2 = new Rook(this.board, Color.BLACK);
 
-        this.board.placePiece(rookwhite1, new Position(7, 0));
-        this.board.placePiece(rookwhite2, new Position(7, 7));
-        this.board.placePiece(rookblack1, new Position(0, 0));
-        this.board.placePiece(rookblack2, new Position(0, 7));
-
-        King kingwhite = new King(this.board, Color.WHITE);
-        King kingblack = new King(this.board, Color.BLACK);
-
-        this.board.placePiece(kingwhite, new Position(7, 4));
-        this.board.placePiece(kingblack, new Position(0, 4));
+        placeNewPiece('a', 1, new Rook(this.board, Color.WHITE));
+        placeNewPiece('h', 1, new Rook(this.board, Color.WHITE));
+        placeNewPiece('a', 8, new Rook(this.board, Color.BLACK));
+        placeNewPiece('h', 8, new Rook(this.board, Color.BLACK));
+        placeNewPiece('e', 1, new King(this.board, Color.WHITE));
+        placeNewPiece('e', 8, new King(this.board, Color.BLACK));
 
     }
 
