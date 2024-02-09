@@ -9,7 +9,6 @@ public class Program {
 
 	public static void main(String[] args) {
         ChessMatch chessMatch = new ChessMatch();
-        UI.printBoard(chessMatch.getChessPieces());
         Scanner  scanner = new Scanner(System.in);
         while (true) {
             UI.printBoard(chessMatch.getChessPieces());
@@ -19,6 +18,7 @@ public class Program {
             System.out.println();
             System.out.print("Target: ");
             ChessPossition target = UI.readChessPossition(scanner);
+            UI.clearScreen();
             chessMatch.performChessMove(source, target);
 
         }

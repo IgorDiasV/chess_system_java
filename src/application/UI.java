@@ -39,6 +39,11 @@ public class UI {
             throw new InputMismatchException("Error reading ChessPossition");
         }
     }
+
+    public static void clearScreen(){
+        System.out.println("\033[H\033[2J");
+        System.out.flush();
+    }
     public static void printBoard(ChessPiece[][] pieces){
         int rows = pieces.length;
         int columns = rows;
