@@ -13,6 +13,8 @@ public class ChessMatch{
 
     public ChessMatch(){
         this.board = new Board(8, 8);
+        this.turn = 1;
+        this.currentPlayer = Color.WHITE;
         this.initialSetup();
     }
 
@@ -45,6 +47,7 @@ public class ChessMatch{
         ValidateSourcePosition(source);
         ValidateTargetPosition(source, target);
         Piece capturedPiece = makeMove(source, target);
+        nextTurn();
         return (ChessPiece) capturedPiece;
     }
 
