@@ -224,7 +224,11 @@ public class ChessMatch{
         placeNewPiece('c', 8, new Bishop(this.board, Color.BLACK));
         placeNewPiece('f', 8, new Bishop(this.board, Color.BLACK));
 
-        placeNewPiece('e', 5, new Knight(this.board, Color.WHITE));
+        placeNewPiece('b', 1, new Knight(this.board, Color.WHITE));
+        placeNewPiece('g', 1, new Knight(this.board, Color.WHITE));
+
+        placeNewPiece('b', 8, new Knight(this.board, Color.BLACK));
+        placeNewPiece('g',8, new Knight(this.board, Color.BLACK));
 
     }
 
